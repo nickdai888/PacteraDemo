@@ -12,6 +12,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.zezooz.pacterademo.FactsActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/mProgress_circle"
+        android:indeterminateDuration="1200"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_container"
         android:layout_width="match_parent"

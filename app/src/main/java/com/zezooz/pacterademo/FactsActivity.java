@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.zezooz.pacterademo.mvp.model.Fact;
@@ -19,9 +20,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class FactsActivity extends AppCompatActivity implements CountryView{
-    @BindView(R.id.factListView)  RecyclerView factListView;
-    @BindView(R.id.swipe_container)  SwipeRefreshLayout swipContainer;
+public class FactsActivity extends AppCompatActivity implements CountryView {
+    @BindView(R.id.factListView)
+    RecyclerView factListView;
+    @BindView(R.id.swipe_container)
+    SwipeRefreshLayout swipContainer;
+    @BindView(R.id.progress_bar)
+    ProgressBar progressBar;
     private ActionBar actionBar;
     private CountryPresenter presenter;
     private FactListAdapter factListAdapter;
@@ -46,7 +51,7 @@ public class FactsActivity extends AppCompatActivity implements CountryView{
     }
 
 
-    private void initFactListView(){
+    private void initFactListView() {
         factListView.setLayoutManager(new LinearLayoutManager(this));
         factListAdapter = new FactListAdapter();
         factListView.setAdapter(factListAdapter);
@@ -61,10 +66,11 @@ public class FactsActivity extends AppCompatActivity implements CountryView{
 
     @Override
     public void showLoading(boolean loading) {
-        if(loading){
+        if (loading) {
             swipContainer.setVisibility(View.GONE);
             swipContainer.setRefreshing(true);
-        }else{
+        } else {
+            progressBar.setVisibility(View.GONE);
             swipContainer.setVisibility(View.VISIBLE);
             swipContainer.setRefreshing(false);
         }
@@ -72,7 +78,7 @@ public class FactsActivity extends AppCompatActivity implements CountryView{
 
     @Override
     public void showError(String errorMessage) {
-        Toast.makeText(this,errorMessage,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show();
     }
 
     @Override
