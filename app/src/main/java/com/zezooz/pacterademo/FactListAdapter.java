@@ -58,16 +58,11 @@ public class FactListAdapter extends RecyclerView.Adapter<FactItemViewholder> {
             factViewholder.imageView.setVisibility(View.VISIBLE);
             Glide.with(factViewholder.imageView.getContext())
                     .load(fact.getImageHref())
-//                    .fitCenter()
                     .centerCrop()
-//                  .placeholder()
                     .error(R.drawable.error)
                     .into(factViewholder.imageView);
         }
-
     }
-
-
 }
 
 class FactItemViewholder extends RecyclerView.ViewHolder {
@@ -84,6 +79,7 @@ class FactItemViewholder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //// TODO: 16/9/5
             }
         });
     }
