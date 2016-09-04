@@ -6,15 +6,23 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    android:padding="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
     card_view:cardCornerRadius="0dp"
     card_view:cardElevation="0dp"
     card_view:cardBackgroundColor="@android:color/transparent"
     card_view:contentPadding="5dp">
 
+    <View
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="0.2dp"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
 
         <TextView
             android:id="@+id/titleView"
@@ -35,6 +43,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_marginTop="5dp"
                 android:layout_alignParentRight="true"
                 />
 

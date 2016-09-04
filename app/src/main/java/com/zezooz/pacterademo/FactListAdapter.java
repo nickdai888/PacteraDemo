@@ -58,7 +58,8 @@ public class FactListAdapter extends RecyclerView.Adapter<FactItemViewholder> {
             factViewholder.imageView.setVisibility(View.VISIBLE);
             Glide.with(factViewholder.imageView.getContext())
                     .load(fact.getImageHref())
-                    .fitCenter()
+//                    .fitCenter()
+                    .centerCrop()
 //                  .placeholder()
                     .error(R.drawable.error)
                     .into(factViewholder.imageView);
