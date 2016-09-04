@@ -21,7 +21,7 @@ public class Country {
      * imageHref : http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg
      */
 
-    private List<Fact> facts;
+    private List<Fact> rows;
 
     public String getTitle() {
         return title;
@@ -31,12 +31,12 @@ public class Country {
         this.title = title;
     }
 
-    public List<Fact> getFacts() {
-        return facts;
+    public List<Fact> getRows() {
+        return rows;
     }
 
-    public void setFacts(List<Fact> facts) {
-        this.facts = facts;
+    public void setRows(List<Fact> facts) {
+        this.rows = facts;
     }
 
 }
